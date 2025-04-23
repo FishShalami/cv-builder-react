@@ -4,7 +4,7 @@ import viteLogo from "/vite.svg";
 import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [firstName, setfirstName] = useState(" ");
 
   return (
     <>
@@ -24,6 +24,8 @@ function App() {
                     name="firstname"
                     id="firstname"
                     placeholder="First name"
+                    value={firstName}
+                    onChange={(e) => setfirstName(e.target.value)}
                   />
                   <input
                     type="text"
@@ -51,18 +53,19 @@ function App() {
           </form>
         </div>
         <div className="outputs">
-          <h1>React</h1>
+          <h1>Resume</h1>
+          {firstName !== "" && <p>Your name is {firstName}.</p>}
           <a href="https://react.dev" target="_blank">
             <img src={reactLogo} className="logo react" alt="React logo" />
           </a>
         </div>
       </div>
 
-      <div className="card">
+      {/* <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
         </button>
-      </div>
+      </div> */}
     </>
   );
 }
