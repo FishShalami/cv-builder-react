@@ -5,6 +5,23 @@
   text-align: center;
 }
 
+.inputs-outputs {
+  display: flex;
+  justify-content: center;
+}
+
+.pi {
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.pi-row1,
+.pi-row2 {
+  display: flex;
+  gap: 1rem;
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;

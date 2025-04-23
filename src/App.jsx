@@ -1,35 +1,70 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+import reactLogo from "./assets/react.svg";
+import viteLogo from "/vite.svg";
+import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <div className="inputs-outputs">
+        <div className="inputs">
+          <h1>Vite</h1>
+          <a href="https://vite.dev" target="_blank">
+            <img src={viteLogo} className="logo" alt="Vite logo" />
+          </a>
+          <form action="post">
+            <fieldset>
+              <legend>Personal Information</legend>
+              <div className="pi">
+                <div className="pi-row1">
+                  <input
+                    type="text"
+                    name="firstname"
+                    id="firstname"
+                    placeholder="First name"
+                  />
+                  <input
+                    type="text"
+                    name="lastname"
+                    id="lastname"
+                    placeholder="Last name"
+                  />
+                </div>
+                <div className="pi-row2">
+                  <input
+                    type="tel"
+                    name="phone"
+                    id="phone"
+                    placeholder="XXX-XXX-XXXX"
+                  />
+                  <input
+                    type="email"
+                    name="email"
+                    id="email"
+                    placeholder="xyz@gmail.com"
+                  />
+                </div>
+              </div>
+            </fieldset>
+          </form>
+        </div>
+        <div className="outputs">
+          <h1>React</h1>
+          <a href="https://react.dev" target="_blank">
+            <img src={reactLogo} className="logo react" alt="React logo" />
+          </a>
+        </div>
       </div>
-      <h1>Vite + React</h1>
+
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
         </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
