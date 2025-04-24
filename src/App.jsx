@@ -4,7 +4,22 @@ import viteLogo from "/vite.svg";
 import "./App.css";
 
 function App() {
-  const [firstName, setfirstName] = useState(" ");
+  const [contactData, setContactData] = useState({
+    firstName: "",
+    lastName: "",
+    phone: "",
+    email: "",
+  });
+
+  const fullName = `${contactData.firstName} ${contactData.lastName}`;
+
+  const handleContactChange = (e) => {
+    const { name, value } = e.target;
+    setContactData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
 
   return (
     <>
@@ -21,17 +36,19 @@ function App() {
                 <div className="pi-row1">
                   <input
                     type="text"
-                    name="firstname"
+                    name="firstName"
                     id="firstname"
                     placeholder="First name"
-                    value={firstName}
-                    onChange={(e) => setfirstName(e.target.value)}
+                    value={contactData.firstName}
+                    onChange={handleContactChange}
                   />
                   <input
                     type="text"
-                    name="lastname"
+                    name="lastName"
                     id="lastname"
                     placeholder="Last name"
+                    value={contactData.lastName}
+                    onChange={handleContactChange}
                   />
                 </div>
                 <div className="pi-row2">
@@ -40,12 +57,16 @@ function App() {
                     name="phone"
                     id="phone"
                     placeholder="XXX-XXX-XXXX"
+                    value={contactData.phone}
+                    onChange={handleContactChange}
                   />
                   <input
                     type="email"
                     name="email"
                     id="email"
                     placeholder="xyz@gmail.com"
+                    value={contactData.email}
+                    onChange={handleContactChange}
                   />
                 </div>
               </div>
@@ -54,7 +75,14 @@ function App() {
         </div>
         <div className="outputs">
           <h1>Resume</h1>
-          {firstName !== "" && <p>Your name is {firstName}.</p>}
+          {contactData.firstName !== "" && <h2>{fullName}</h2>}
+          <p>
+            {(contactData.phone !== "") | (contactData.email !== "") && (
+              <h2>
+                {contactData.phone} | {contactData.email}
+              </h2>
+            )}
+          </p>
           <a href="https://react.dev" target="_blank">
             <img src={reactLogo} className="logo react" alt="React logo" />
           </a>
