@@ -1,7 +1,6 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
+import PersonalInfo from "./PersonalInfo";
 
 function App() {
   const [contactData, setContactData] = useState({
@@ -25,75 +24,31 @@ function App() {
     <>
       <div className="inputs-outputs">
         <div className="inputs">
-          <h1>Vite</h1>
-          <a href="https://vite.dev" target="_blank">
-            <img src={viteLogo} className="logo" alt="Vite logo" />
-          </a>
+          <h3>Data Input</h3>
           <form action="post">
-            <fieldset>
-              <legend>Personal Information</legend>
-              <div className="pi">
-                <div className="pi-row1">
-                  <input
-                    type="text"
-                    name="firstName"
-                    id="firstname"
-                    placeholder="First name"
-                    value={contactData.firstName}
-                    onChange={handleContactChange}
-                  />
-                  <input
-                    type="text"
-                    name="lastName"
-                    id="lastname"
-                    placeholder="Last name"
-                    value={contactData.lastName}
-                    onChange={handleContactChange}
-                  />
-                </div>
-                <div className="pi-row2">
-                  <input
-                    type="tel"
-                    name="phone"
-                    id="phone"
-                    placeholder="XXX-XXX-XXXX"
-                    value={contactData.phone}
-                    onChange={handleContactChange}
-                  />
-                  <input
-                    type="email"
-                    name="email"
-                    id="email"
-                    placeholder="xyz@gmail.com"
-                    value={contactData.email}
-                    onChange={handleContactChange}
-                  />
-                </div>
-              </div>
-            </fieldset>
+            <PersonalInfo
+              contactData={contactData}
+              handleContactChange={handleContactChange}
+            />
+            <PersonalInfo
+              contactData={contactData}
+              handleContactChange={handleContactChange}
+            />
           </form>
         </div>
         <div className="outputs">
-          <h1>Resume</h1>
-          {contactData.firstName !== "" && <h2>{fullName}</h2>}
-          <p>
-            {(contactData.phone !== "") | (contactData.email !== "") && (
-              <h2>
-                {contactData.phone} | {contactData.email}
-              </h2>
-            )}
-          </p>
-          <a href="https://react.dev" target="_blank">
-            <img src={reactLogo} className="logo react" alt="React logo" />
-          </a>
+          {contactData.firstName !== "" && <h1>{fullName}</h1>}
+          {(contactData.phone || contactData.email) && (
+            <p>
+              <span>
+                {contactData.phone}
+                {contactData.phone && contactData.email && " | "}
+                {contactData.email}
+              </span>
+            </p>
+          )}
         </div>
       </div>
-
-      {/* <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-      </div> */}
     </>
   );
 }
