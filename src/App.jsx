@@ -139,7 +139,7 @@ function App() {
           </div>
           <div className="education-body">
             {education.map((edu, index) => (
-              <div key={index}>
+              <div className="school-body" key={index}>
                 <div className="schoolline">
                   <div className="school">
                     <h3>{edu.schoolName}</h3>
@@ -151,7 +151,9 @@ function App() {
                     -{moment(edu.endDateEducation).format("MMMM YYYY")}
                   </div>
                 </div>
-                <p>{edu.degree}</p>
+                <div className="degree">
+                  <p>{edu.degree}</p>
+                </div>
               </div>
             ))}
           </div>
