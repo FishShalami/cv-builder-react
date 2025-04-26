@@ -24,6 +24,15 @@ function App() {
       positionDescription:
         "Led a team of 10 in the development of a new product line.",
     },
+    {
+      companyName: "Company 2",
+      positionTitle: "Developer",
+      startDate: "2021-04-09",
+      endDate: "2022-04-09",
+      positionLocation: "New York, NY",
+      positionDescription:
+        "Developed and maintained web applications using React and Node.js.",
+    },
   ]);
 
   const handleContactChange = (e) => {

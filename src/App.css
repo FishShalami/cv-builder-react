@@ -1,18 +1,24 @@
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
 }
 
 .inputs-outputs {
   display: grid;
-  justify-content: center;
+  /* justify-content: center; */
   grid-template-columns: 1fr 3fr;
 }
 
 .inputs {
   background-color: aquamarine;
+}
+
+.pi,
+.we {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  gap: 5px;
 }
 
 .cv-header {

@@ -41,11 +41,12 @@ function WorkExperience({ work, handleWorkExperienceChange }) {
           value={work.positionLocation}
           onChange={handleWorkExperienceChange}
         />
-        <input
+        <textarea
           type="text"
           name="positionDescription"
           id="positionDescription"
           placeholder="Position Description"
+          rows="2"
           value={work.positionDescription}
           onChange={handleWorkExperienceChange}
         />
