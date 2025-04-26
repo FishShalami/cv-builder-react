@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./App.css";
 import PersonalInfo from "./PersonalInfo";
 import WorkExperience from "./WorkExperience";
+import moment from "moment";
 
 function App() {
   const [contactData, setContactData] = useState({
@@ -13,15 +14,17 @@ function App() {
 
   const fullName = `${contactData.firstName} ${contactData.lastName}`;
 
-  const [workData, setWorkData] = useState({
-    companyName: "Company 1",
-    positionTitle: "Manager",
-    startDate: "2020-04-09",
-    endDate: "2025-04-09",
-    positionLocation: "Baltimore, MD",
-    positionDescription:
-      "Led a team of 10 in the development of a new product line.",
-  });
+  const [workExperiences, setWorkExperiences] = useState([
+    {
+      companyName: "Company 1",
+      positionTitle: "Manager",
+      startDate: "2020-04-09",
+      endDate: "2025-04-09",
+      positionLocation: "Baltimore, MD",
+      positionDescription:
+        "Led a team of 10 in the development of a new product line.",
+    },
+  ]);
 
   const handleContactChange = (e) => {
     const { name, value } = e.target;
@@ -31,12 +34,25 @@ function App() {
     }));
   };
 
-  const handleWorkExperienceChange = (e) => {
+  const handleWorkExperienceChange = (index, e) => {
     const { name, value } = e.target;
-    setWorkData((prev) => ({
+    setWorkExperiences((prev) =>
+      prev.map((work, i) => (i === index ? { ...work, [name]: value } : work))
+    );
+  };
+
+  const addWorkExperience = () => {
+    setWorkExperiences((prev) => [
       ...prev,
-      [name]: value,
-    }));
+      {
+        companyName: "",
+        positionTitle: "",
+        startDate: "",
+        endDate: "",
+        positionLocation: "",
+        positionDescription: "",
+      },
+    ]);
   };
 
   return (
@@ -49,10 +65,18 @@ function App() {
               contactData={contactData}
               handleContactChange={handleContactChange}
             />
-            <WorkExperience
-              workData={workData}
-              handleWorkExperienceChange={handleWorkExperienceChange}
-            />
+            {workExperiences.map((work, index) => (
+              <WorkExperience
+                key={index}
+                work={work}
+                handleWorkExperienceChange={(e) =>
+                  handleWorkExperienceChange(index, e)
+                }
+              />
+            ))}
+            <button type="button" onClick={addWorkExperience}>
+              Add Work Experience
+            </button>
           </form>
         </div>
         <div className="outputs">
@@ -72,16 +96,21 @@ function App() {
             <h2>Work Experience</h2>
             <hr className="solid" />
             <div className="work-experence-body">
-              <h3>{workData.companyName}</h3>
-              <p>
-                <b>{workData.positionTitle}</b>
-                <br />
-                {workData.startDate} - {workData.endDate}
-                <br />
-                {workData.positionLocation}
-                <br />
-                {workData.positionDescription}
-              </p>
+              {workExperiences.map((work, index) => (
+                <div key={index}>
+                  <h3>{work.companyName}</h3>
+                  <p>
+                    <b>{work.positionTitle}</b>
+                    <br />
+                    {moment(work.startDate).format("MMMM YYYY")} -{" "}
+                    {moment(work.endDate).format("MMMM YYYY")}
+                    <br />
+                    {work.positionLocation}
+                    <br />
+                    {work.positionDescription}
+                  </p>
+                </div>
+              ))}
             </div>
           </div>
         </div>

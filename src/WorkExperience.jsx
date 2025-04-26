@@ -1,4 +1,4 @@
-function WorkExperience({ workData, handleWorkExperienceChange }) {
+function WorkExperience({ work, handleWorkExperienceChange }) {
   return (
     <fieldset>
       <legend>Work Experience</legend>
@@ -8,7 +8,7 @@ function WorkExperience({ workData, handleWorkExperienceChange }) {
           name="companyName"
           id="companyName"
           placeholder="Company Name"
-          value={workData.companyName}
+          value={work.companyName}
           onChange={handleWorkExperienceChange}
         />
         <input
@@ -16,21 +16,21 @@ function WorkExperience({ workData, handleWorkExperienceChange }) {
           name="positionTitle"
           id="positionTitle"
           placeholder="Your Position"
-          value={workData.positionTitle}
+          value={work.positionTitle}
           onChange={handleWorkExperienceChange}
         />
         <input
           type="date"
           name="startDate"
           id="startDate"
-          value={workData.startDate}
+          value={work.startDate}
           onChange={handleWorkExperienceChange}
         />
         <input
           type="date"
           name="endDate"
           id="endDate"
-          value={workData.endDate}
+          value={work.endDate}
           onChange={handleWorkExperienceChange}
         />
         <input
@@ -38,7 +38,7 @@ function WorkExperience({ workData, handleWorkExperienceChange }) {
           name="positionLocation"
           id="positionLocation"
           placeholder="Location"
-          value={workData.positionLocation}
+          value={work.positionLocation}
           onChange={handleWorkExperienceChange}
         />
         <input
@@ -46,7 +46,7 @@ function WorkExperience({ workData, handleWorkExperienceChange }) {
           name="positionDescription"
           id="positionDescription"
           placeholder="Position Description"
-          value={workData.positionDescription}
+          value={work.positionDescription}
           onChange={handleWorkExperienceChange}
         />
       </div>

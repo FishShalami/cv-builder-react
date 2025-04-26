@@ -32,6 +32,7 @@
 .outputs {
   background-color: beige;
   border: 2px solid black;
+  color: black;
 }
 
 hr.solid {
