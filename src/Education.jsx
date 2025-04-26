@@ -16,7 +16,7 @@ function Education({ education, handleEducationChange }) {
           name="degree"
           id="degree"
           placeholder="Degree Obtained"
-          value={education.degreee}
+          value={education.degree}
           onChange={handleEducationChange}
         />
         <input

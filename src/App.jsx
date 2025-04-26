@@ -140,7 +140,18 @@ function App() {
           <div className="education-body">
             {education.map((edu, index) => (
               <div key={index}>
-                <h3>{edu.schoolName}</h3>
+                <div className="schoolline">
+                  <div className="school">
+                    <h3>{edu.schoolName}</h3>
+                    <p>{edu.educationLocation}</p>
+                  </div>
+                  <div className="schooldates">
+                    {edu.startDateEducation !== "" &&
+                      moment(edu.startDateEducation).format("MMMM YYYY")}{" "}
+                    -{moment(edu.endDateEducation).format("MMMM YYYY")}
+                  </div>
+                </div>
+                <p>{edu.degree}</p>
               </div>
             ))}
           </div>

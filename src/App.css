@@ -45,3 +45,18 @@ hr.solid {
   border-top: 1px solid #595757;
   width: 80%;
 }
+
+.schoolline {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 20px;
+}
+
+.school {
+  display: grid;
+  justify-content: left;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  align-items: center;
+}
