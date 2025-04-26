@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./App.css";
 import PersonalInfo from "./PersonalInfo";
 import WorkExperience from "./WorkExperience";
+import Education from "./Education";
 import moment from "moment";
 
 function App() {
@@ -34,6 +35,30 @@ function App() {
         "Developed and maintained web applications using React and Node.js.",
     },
   ]);
+
+  const [education, setEducation] = useState([
+    {
+      schoolName: "University of Maryland",
+      degree: "Bachelor of Science in Computer Science",
+      startDateEducation: "2015-09-01",
+      endDateEducation: "2019-05-15",
+      educationLocation: "College Park, MD",
+    },
+    {
+      schoolName: "Johns Hopkins University",
+      degree: "Master of Science in Computer Science",
+      startDateEducation: "2019-09-01",
+      endDateEducation: "2021-05-15",
+      educationLocation: "Baltimore, MD",
+    },
+  ]);
+
+  const handleEducationChange = (index, e) => {
+    const { name, value } = e.target;
+    setEducation((prev) =>
+      prev.map((edu, i) => (i === index ? { ...edu, [name]: value } : edu))
+    );
+  };
 
   const handleContactChange = (e) => {
     const { name, value } = e.target;
@@ -74,6 +99,13 @@ function App() {
               contactData={contactData}
               handleContactChange={handleContactChange}
             />
+            {education.map((edu, index) => (
+              <Education
+                key={index}
+                education={edu}
+                handleEducationChange={(e) => handleEducationChange(index, e)}
+              />
+            ))}
             {workExperiences.map((work, index) => (
               <WorkExperience
                 key={index}
@@ -100,6 +132,17 @@ function App() {
                 </span>
               </p>
             )}
+          </div>
+          <div className="education-header">
+            <h2>Education</h2>
+            <hr className="solid" />
+          </div>
+          <div className="education-body">
+            {education.map((edu, index) => (
+              <div key={index}>
+                <h3>{edu.schoolName}</h3>
+              </div>
+            ))}
           </div>
           <div className="work-experience-header">
             <h2>Work Experience</h2>
