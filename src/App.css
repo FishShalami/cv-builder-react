@@ -45,7 +45,9 @@
 
 .company-line {
   display: flex;
-  justify-content: space-between;
+  justify-content: left;
+  align-items: center;
+  gap: 10px;
 }
 
 .work-position {
