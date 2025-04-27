@@ -148,7 +148,7 @@ function App() {
                   <div className="schooldates">
                     {edu.startDateEducation !== "" &&
                       moment(edu.startDateEducation).format("MMMM YYYY")}{" "}
-                    -{moment(edu.endDateEducation).format("MMMM YYYY")}
+                    - {moment(edu.endDateEducation).format("MMMM YYYY")}
                   </div>
                 </div>
                 <div className="degree">
@@ -160,23 +160,26 @@ function App() {
           <div className="work-experience-header">
             <h2>Work Experience</h2>
             <hr className="solid" />
-            <div className="work-experence-body">
-              {workExperiences.map((work, index) => (
-                <div key={index}>
+          </div>
+          <div className="work-experience-body">
+            {workExperiences.map((work, index) => (
+              <div className="work-body" key={index}>
+                <div className="company-line">
                   <h3>{work.companyName}</h3>
+                  <p>{work.positionLocation}</p>
+                </div>
+                <div className="work-position">
                   <p>
                     <b>{work.positionTitle}</b>
-                    <br />
+                  </p>
+                  <p>
                     {moment(work.startDate).format("MMMM YYYY")} -{" "}
                     {moment(work.endDate).format("MMMM YYYY")}
-                    <br />
-                    {work.positionLocation}
-                    <br />
-                    {work.positionDescription}
                   </p>
                 </div>
-              ))}
-            </div>
+                <p>{work.positionDescription}</p>
+              </div>
+            ))}
           </div>
         </div>
       </div>
