@@ -89,23 +89,51 @@ function App() {
     ]);
   };
 
+  const [isPiVisible, setPiVisible] = useState(true);
+  const [isEduVisible, setEduVisible] = useState(true);
+  const [isWeVisible, setWeVisible] = useState(true);
+
   return (
     <>
       <div className="inputs-outputs">
         <div className="inputs">
           <h3>Data Input</h3>
           <form action="post">
-            <PersonalInfo
-              contactData={contactData}
-              handleContactChange={handleContactChange}
-            />
-            {education.map((edu, index) => (
-              <Education
-                key={index}
-                education={edu}
-                handleEducationChange={(e) => handleEducationChange(index, e)}
-              />
-            ))}
+            <button
+              type="button"
+              className="collapsible"
+              onClick={() => setPiVisible(!isPiVisible)}
+            >
+              Personal Info
+            </button>
+            {isPiVisible && (
+              <div className="pi-form">
+                <PersonalInfo
+                  contactData={contactData}
+                  handleContactChange={handleContactChange}
+                />
+              </div>
+            )}
+            <button
+              type="button"
+              className="collapsible"
+              onClick={() => setEduVisible(!isEduVisible)}
+            >
+              Education
+            </button>
+            {isEduVisible && (
+              <div className="edu-form">
+                {education.map((edu, index) => (
+                  <Education
+                    key={index}
+                    education={edu}
+                    handleEducationChange={(e) =>
+                      handleEducationChange(index, e)
+                    }
+                  />
+                ))}
+              </div>
+            )}
             {workExperiences.map((work, index) => (
               <WorkExperience
                 key={index}

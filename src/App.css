@@ -93,3 +93,21 @@ hr.solid {
 .degree > p {
   margin: 0 20px;
 }
+
+.collapsible {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.pi-form {
+  padding: 0 18px;
+  overflow: hidden;
+  background-color: #f1f1f1;
+}

@@ -2,6 +2,7 @@ function Education({ education, handleEducationChange }) {
   return (
     <fieldset>
       <legend>Education</legend>
+
       <div className="edu">
         <input
           type="text"
