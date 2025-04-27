@@ -1,7 +1,6 @@
 function WorkExperience({ work, handleWorkExperienceChange }) {
   return (
-    <fieldset>
-      <legend>Work Experience</legend>
+    <fieldset className="wes">
       <div className="we">
         <input
           type="text"

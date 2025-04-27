@@ -9,10 +9,6 @@
   grid-template-columns: 1fr 3fr;
 }
 
-.inputs {
-  background-color: aquamarine;
-}
-
 .pi,
 .we {
   display: flex;
@@ -98,16 +94,44 @@ hr.solid {
   background-color: #eee;
   color: #444;
   cursor: pointer;
-  padding: 18px;
+  padding: 10px;
   width: 100%;
-  border: none;
-  text-align: left;
-  outline: none;
+  text-align: center;
+
   font-size: 15px;
+  border: solid 1px black;
+}
+
+.work-exp-button {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 10px;
+  width: 100%;
+  text-align: center;
+
+  font-size: 12px;
+  border: solid 1px black;
 }
 
 .pi-form {
   padding: 0 18px;
   overflow: hidden;
-  background-color: #f1f1f1;
+  background-color: #3b4fa9;
+}
+.edu-form {
+  padding: 0 18px;
+  overflow: hidden;
+  background-color: #3b4fa9;
+}
+.we-form {
+  padding: 0 18px;
+  overflow: hidden;
+  background-color: #3b4fa9;
+}
+
+.edus,
+.wes,
+.pi {
+  margin: 20px 0;
 }

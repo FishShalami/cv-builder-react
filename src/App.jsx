@@ -97,7 +97,6 @@ function App() {
     <>
       <div className="inputs-outputs">
         <div className="inputs">
-          <h3>Data Input</h3>
           <form action="post">
             <button
               type="button"
@@ -134,18 +133,33 @@ function App() {
                 ))}
               </div>
             )}
-            {workExperiences.map((work, index) => (
-              <WorkExperience
-                key={index}
-                work={work}
-                handleWorkExperienceChange={(e) =>
-                  handleWorkExperienceChange(index, e)
-                }
-              />
-            ))}
-            <button type="button" onClick={addWorkExperience}>
-              Add Work Experience
+            <button
+              type="button"
+              className="collapsible"
+              onClick={() => setWeVisible(!isWeVisible)}
+            >
+              Work Experience
             </button>
+            {isWeVisible && (
+              <div className="we-form">
+                {workExperiences.map((work, index) => (
+                  <WorkExperience
+                    key={index}
+                    work={work}
+                    handleWorkExperienceChange={(e) =>
+                      handleWorkExperienceChange(index, e)
+                    }
+                  />
+                ))}
+                <button
+                  className="work-exp-button"
+                  type="button"
+                  onClick={addWorkExperience}
+                >
+                  Add Work Experience
+                </button>
+              </div>
+            )}
           </form>
         </div>
         <div className="outputs">

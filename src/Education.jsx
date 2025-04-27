@@ -1,8 +1,6 @@
 function Education({ education, handleEducationChange }) {
   return (
-    <fieldset>
-      <legend>Education</legend>
-
+    <fieldset className="edus">
       <div className="edu">
         <input
           type="text"
