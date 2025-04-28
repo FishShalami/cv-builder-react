@@ -96,7 +96,7 @@ function App() {
   const [isWeVisible, setWeVisible] = useState(true);
 
   function downloadPDF() {
-    const outputDiv = document.querySelelector(".outputs");
+    const outputDiv = document.querySelector(".outputs");
 
     html2canvas(outputDiv, { scale: 2 }).then((canvas) => {
       const imgData = canvas.toDataURL("image/png");
