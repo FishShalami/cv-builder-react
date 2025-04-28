@@ -9,6 +9,20 @@
   grid-template-columns: 1fr 3fr;
 }
 
+input {
+  width: 100%;
+  font-size: 1rem;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+textarea {
+  width: 100%;
+  font-size: 1rem;
+  border-radius: 5px;
+  padding: 5px;
+}
+
 .pi,
 .we {
   display: flex;
@@ -149,4 +163,10 @@ hr.solid {
   background-color: red;
   width: 75%;
   font-size: 1.1rem;
+  padding: 5px;
+}
+
+.download > button:hover {
+  background-color: rgb(145, 3, 3);
+  color: white;
 }
