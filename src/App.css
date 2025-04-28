@@ -137,3 +137,16 @@ hr.solid {
 .pi {
   margin: 20px 0;
 }
+
+.download {
+  background-color: #3b4fa9;
+  text-align: center;
+  padding: 20px;
+  min-height: 50px;
+}
+
+.download > button {
+  background-color: red;
+  width: 75%;
+  font-size: 1.1rem;
+}

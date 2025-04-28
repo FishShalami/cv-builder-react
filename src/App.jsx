@@ -93,7 +93,7 @@ function App() {
 
   const [isPiVisible, setPiVisible] = useState(true);
   const [isEduVisible, setEduVisible] = useState(true);
-  const [isWeVisible, setWeVisible] = useState(true);
+  const [isWeVisible, setWeVisible] = useState(false);
 
   function downloadPDF() {
     const outputDiv = document.querySelector(".outputs");
