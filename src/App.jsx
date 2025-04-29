@@ -105,7 +105,7 @@ function App() {
   };
 
   const [isPiVisible, setPiVisible] = useState(true);
-  const [isEduVisible, setEduVisible] = useState(true);
+  const [isEduVisible, setEduVisible] = useState(false);
   const [isWeVisible, setWeVisible] = useState(false);
 
   function downloadPDF() {
@@ -146,7 +146,7 @@ function App() {
               className="collapsible"
               onClick={() => setPiVisible(!isPiVisible)}
             >
-              Personal Info
+              {isPiVisible ? "▼" : "▶"} Personal Info
             </button>
             {isPiVisible && (
               <div className="pi-form">
@@ -161,7 +161,7 @@ function App() {
               className="collapsible"
               onClick={() => setEduVisible(!isEduVisible)}
             >
-              Education
+              {isEduVisible ? "▼" : "▶"} Education
             </button>
             {isEduVisible && (
               <div className="edu-form">
@@ -197,7 +197,7 @@ function App() {
               className="collapsible"
               onClick={() => setWeVisible(!isWeVisible)}
             >
-              Work Experience
+              {isWeVisible ? "▼" : "▶"} Work Experience
             </button>
             {isWeVisible && (
               <div className="we-form">
