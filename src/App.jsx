@@ -110,6 +110,14 @@ function App() {
     });
   }
 
+  const deleteWorkExperience = (index) => {
+    setWorkExperiences((prev) => prev.filter((_, i) => i !== index));
+  };
+
+  const deleteEducation = (index) => {
+    setEducation((prev) => prev.filter((_, i) => i != index));
+  };
+
   return (
     <>
       <div className="inputs-outputs">
@@ -145,13 +153,22 @@ function App() {
             {isEduVisible && (
               <div className="edu-form">
                 {education.map((edu, index) => (
-                  <Education
-                    key={index}
-                    education={edu}
-                    handleEducationChange={(e) =>
-                      handleEducationChange(index, e)
-                    }
-                  />
+                  <div key={index} className="education-entry">
+                    <Education
+                      key={index}
+                      education={edu}
+                      handleEducationChange={(e) =>
+                        handleEducationChange(index, e)
+                      }
+                    />
+                    <button
+                      type="button"
+                      className="delete-button"
+                      onClick={() => deleteEducation(index)}
+                    >
+                      Delete Education
+                    </button>
+                  </div>
                 ))}
               </div>
             )}
@@ -165,13 +182,22 @@ function App() {
             {isWeVisible && (
               <div className="we-form">
                 {workExperiences.map((work, index) => (
-                  <WorkExperience
-                    key={index}
-                    work={work}
-                    handleWorkExperienceChange={(e) =>
-                      handleWorkExperienceChange(index, e)
-                    }
-                  />
+                  <div key={index} className="we-entry">
+                    <WorkExperience
+                      key={index}
+                      work={work}
+                      handleWorkExperienceChange={(e) =>
+                        handleWorkExperienceChange(index, e)
+                      }
+                    />
+                    <button
+                      type="button"
+                      className="delete-button"
+                      onClick={() => deleteWorkExperience(index)}
+                    >
+                      Delete Work Experience
+                    </button>
+                  </div>
                 ))}
                 <button
                   className="work-exp-button"
