@@ -25,7 +25,7 @@ function EducationSection({ education, setEducation }) {
   };
 
   const deleteEducation = (index) => {
-    setEducation((prev) => prev.filter((_, i) => i != index));
+    setEducation((prev) => prev.filter((_, i) => i !== index));
   };
 
   return (

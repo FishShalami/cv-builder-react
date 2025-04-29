@@ -61,7 +61,7 @@ function App() {
             contactData={contactData}
             setContactData={setContactData}
           />
-          <EducationSection education={education} setEcucation={setEducation} />
+          <EducationSection education={education} setEducation={setEducation} />
           <WorkExperienceSection
             workExperiences={workExperiences}
             setWorkExperiences={setWorkExperiences}
