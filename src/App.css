@@ -171,3 +171,16 @@ hr.solid {
   background-color: rgb(145, 3, 3);
   color: white;
 }
+
+.delete-button {
+  padding: 10px;
+  border-radius: 5px;
+  margin: 10px 0;
+}
+
+.add-entry-button {
+  padding: 10px;
+  border-radius: 5px;
+  margin: 10px 0;
+  width: 80%;
+}

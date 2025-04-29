@@ -184,7 +184,7 @@ function App() {
                   </div>
                 ))}
                 <button
-                  className="work-exp-button"
+                  className="add-entry-button"
                   type="button"
                   onClick={addEducation}
                 >
@@ -220,7 +220,7 @@ function App() {
                   </div>
                 ))}
                 <button
-                  className="work-exp-button"
+                  className="add-entry-button"
                   type="button"
                   onClick={addWorkExperience}
                 >
