@@ -91,6 +91,19 @@ function App() {
     ]);
   };
 
+  const addEducation = () => {
+    setEducation((prev) => [
+      ...prev,
+      {
+        schoolName: "",
+        degree: "",
+        startDateEducation: "",
+        endDateEducation: "",
+        educationLocation: "",
+      },
+    ]);
+  };
+
   const [isPiVisible, setPiVisible] = useState(true);
   const [isEduVisible, setEduVisible] = useState(true);
   const [isWeVisible, setWeVisible] = useState(false);
@@ -170,6 +183,13 @@ function App() {
                     </button>
                   </div>
                 ))}
+                <button
+                  className="work-exp-button"
+                  type="button"
+                  onClick={addEducation}
+                >
+                  Add Education
+                </button>
               </div>
             )}
             <button
