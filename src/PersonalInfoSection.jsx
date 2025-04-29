@@ -17,11 +17,11 @@ function PersonalInfoSection({ contactData, setContactData }) {
       <button
         type="button"
         className="collapsible"
-        onClick={() => setPiVisible(!isPiVisible)}
+        onClick={() => setIsVisible(!isVisible)}
       >
-        {isPiVisible ? "▼" : "▶"} Personal Info
+        {isVisible ? "▼" : "▶"} Personal Info
       </button>
-      {isPiVisible && (
+      {isVisible && (
         <div className="pi-form">
           <PersonalInfo
             contactData={contactData}

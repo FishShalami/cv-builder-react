@@ -2,8 +2,7 @@ import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
 
 function DownloadButton() {
-
-    const  downloadPDF() {
+  const downloadPDF = () => {
     const outputDiv = document.querySelector(".outputs");
 
     html2canvas(outputDiv, { scale: 2 }).then((canvas) => {
@@ -16,15 +15,14 @@ function DownloadButton() {
       pdf.addImage(imgData, "PNG", 0, 0, pdfWidth, pdfHeight); // Add the image to the PDF
       pdf.save("cv-download.pdf"); // Save the PDF with a filename
     });
-  }
+  };
 
   return (
     <div className="download">
-            <button type="button" onClick={downloadPDF}>
-              Download as PDF
-            </button>
-          </div>
-  )
-
+      <button type="button" onClick={downloadPDF}>
+        Download as PDF
+      </button>
+    </div>
+  );
 }
 export default DownloadButton;
