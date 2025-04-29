@@ -107,13 +107,15 @@ hr.solid {
 }
 
 .collapsible {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   background-color: #eee;
   color: #444;
   cursor: pointer;
   padding: 10px;
   width: 100%;
-  text-align: center;
-
+  text-align: left;
   font-size: 15px;
   border: solid 1px black;
 }
