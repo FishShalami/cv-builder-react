@@ -4,7 +4,9 @@ function OutputPreview({ contactData, education, workExperiences }) {
   return (
     <div className="outputs">
       <div className="cv-header">
-        {contactData.firstName !== "" && <h1>{fullName}</h1>}
+        {contactData.firstName !== "" && (
+          <h1>{`${contactData.firstName} ${contactData.lastName}`}</h1>
+        )}
         {(contactData.phone || contactData.email) && (
           <p>
             <span>
